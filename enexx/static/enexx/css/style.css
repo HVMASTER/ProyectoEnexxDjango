@@ -1,0 +1,587 @@
+.navbarHeader{
+    padding-left: 45px;
+}
+
+.DropdownBody{
+    background-color: #ffc107;
+    border:solid 1px rgb(0, 0, 0);
+    
+}
+
+.backgroundHeader{
+    background-color:#fbff2cd3;
+    
+}
+
+.logo{
+    margin-right: 100px;
+}
+
+.navbarLink{
+    padding: 5px;
+}
+
+.dropdown{
+    padding-top: 20px;
+    margin: 0px;
+}
+
+.contenedorBotones{
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: inline-block;
+    display: flex;
+}
+
+.separadorBoton1{
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    font: weight 2px;;
+    
+
+}
+
+.separadorBotonLogin{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 40%;
+    display: inline-block;
+    display: flex;
+     
+}
+
+.contenedorBtnLogin{
+    display: inline-block;
+    display: flex;
+    align-items: flex-end;
+}
+
+.carrusel{
+    max-height: max-content;
+}
+
+.contenedorCarrusel{
+    padding-top: 0px;
+    margin-bottom: 10%;
+    
+}
+
+.textoBoton{
+    background-color: #ffc107;
+    border-color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;  
+}
+
+
+.textoH1Carrusel{
+    text-align: center;
+    padding-top: 20px;
+    text-decoration: solid wavy;
+}
+
+.TamañoFlecha{
+    position: relative;
+    display: inline-block;
+    display: flex;
+    width: 10%;
+    height: 10%;
+    transform: translate(250%, 5%);
+    justify-content: flex-end;
+}
+
+.contenedorBot2{
+    position: relative;
+    z-index: 2;
+    width: 45%;
+    height: auto;
+}
+
+
+.contenedorLogin{
+    border-style: outset;
+    border-color: dimgrey;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    width: 500px;
+    background-color: darkcyan;
+    color: silver;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+    text-shadow: 2px 2px 5px;
+}
+
+#Login{
+    text-align: center;
+}
+
+#pass{
+    text-align: center;
+}
+
+.alingText{
+    margin-right: 5px;
+}
+
+.modal-body{
+    padding: 0px;
+
+}
+
+
+#linkOficiales{
+    padding-top: 5px;
+    margin: 0px;
+}
+.imgFooter{
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+}
+
+.imgWebPay{
+    width: 10%;
+    height: auto;
+    display: flex;
+    display: inline-block;
+}
+
+.container-fluid{
+    border-style: groove;
+    border-bottom: 50%;
+    background-color: white;
+}
+
+.estiloCarta{
+    width: 20%;
+    height: auto;
+    margin: 1%;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    background-color: darkcyan;
+    box-shadow: 0 0 20px;
+}
+
+
+
+.estiloIcono{
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: auto;
+}
+
+.contenedorCateg{
+    display: inline-block;
+    display: flex;
+    background-color: #ffc107;
+    padding-left: 5%;
+    padding-right: 5%;
+    transition: transform 0.3s;
+}
+
+.contenedorCateg:hover{
+    transform: scale(1.05);
+}
+
+.container{
+    background-color: #383838;
+    border: 2px solid black;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+
+}
+
+.h2Categoria{
+    padding-left: 17%;
+    margin: 0;
+    padding-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 3rem;
+    text-decoration: underline;
+    color: white;
+}
+
+.colorFondoCard{
+    background-color: #ffc107 ;
+}
+
+.productos{
+
+    display: flex;
+    padding-top: 50px;
+   }
+
+
+.contenedorFiltro{
+
+    width: 15%;
+    background-color: #ffc107 ;
+    margin-left: 30px;
+    
+}   
+.contenedorJuegos{
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+}
+
+.contenedorJuegos .card{
+    width: 250px;
+    height: 30em;
+    margin: auto;
+    margin-bottom: 30px;
+    color: #fff;
+    background-color: #383838;
+
+    transition: all .4s;
+    
+}
+
+.btn-add-cart{
+    position: absolute;
+    top: 94%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+}
+
+.fondo{
+    background-color: #ffc107;
+
+}
+
+.contenedorJuegos .card:hover{
+    box-shadow: 0px 0px 35px;
+}
+
+.contenedorEnlaces{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #ffc107 ;
+    padding-left: 5%;
+    padding-right: 5%;
+    transition: transform 0.3s;
+}
+
+.contenedorEnlaces:hover{
+    transform: scale(1.05);
+}
+
+.reduccionImagen{
+    width: 30%;
+    height: auto;
+}
+
+.reduccionImagen2{
+    width: 20%;
+    height: auto;
+    margin: 2%;
+}
+
+.tamañoCardFooter{
+    width: 25%;
+    height: auto;
+    text-align: left;
+    background-color: #ffc107 ;
+    color: black;
+}
+
+.contenedorFinalFooter{
+    position: absolute;
+    background-color: #ffc107 ;
+    width: 100%;
+
+    
+}
+
+.textFinal1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 4rem;
+    color: black;
+    text-shadow: 2px 2px 0px darkgray, 4px 4px 0px black ;
+}
+
+.imgFinal{
+    display: inline-block;
+    display: flex;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 80%;
+    margin-left: 20%; 
+    margin-right: 20%;
+}
+
+.contenedorCopyright{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.contenedorBotonesUsuario{
+    display: flex;
+    display: inline-block;
+    width: 100%;
+}
+
+.enlaceCrearUsuario{
+    margin-right: 70%;
+    display: flex;
+    display: inline-block; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: none;
+}
+
+
+.icon-cart{
+    width: 40px;
+    height: 40px;
+    stroke: #000;
+}
+.icon-cart:hover{
+    cursor: pointer;
+}
+.container-icon{
+  position: relative;
+
+}
+.count-products{
+  position: absolute;
+    top: 55%;
+    right: 0;
+
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.container-cart-products{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #f4e91e;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 10px 20px #000 rgba(0,0,0,0,20);
+    border-radius: 10px;
+
+}
+.icon-close{
+    width: 25px;
+    height: 25px;
+}
+.icon-close:hover{
+    stroke: red;
+    cursor: pointer;
+}
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border-bottom: 1px solid #000
+}
+
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+.titulo-producto-carrito{
+    font-size: 20px;
+
+}
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+
+}
+.cantidad-producto-carrito{
+    font-weight: 500;
+    font-size: 20px;
+}
+.cart-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+.cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-pagar{
+    font-size: 20px;
+    font-weight: 900;
+}
+.hidden-cart{
+    display: none;
+}
+
+.contenedorHeaderCreaUsuario{
+    display: flex;
+    background-color: #fbff2cd3;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.modTituloCreaUsuario{
+    display: inline-block;
+    margin-right: 20%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 4em;
+    
+}
+
+.backgroundBody{
+    background-color: #ffc107;
+}
+
+.contenedorbody{
+    display: flex;
+    display: inline-block;
+    width: 100%;
+}
+
+.contenedorCreaUsuario{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    align-items: center;
+
+}
+
+.contenedorParrafo{
+    width: 50%;
+    margin: 1%;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+
+.contenedorRegistro{
+    display: inline-block;
+    width: 26em;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 4%;
+    padding: 3%;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+    background-color: #f7a343;
+    border: #000;
+    border-style: groove;
+}
+
+.contenedorAccede{
+    display: flex;
+}
+
+.largoFormControl{
+    width: 75%;
+    height: auto;
+}
+
+.largoForm{
+    width: 75%;
+    height: auto;
+    margin-left: 20%;
+}
+
+.btn-crearCuenta{
+    background-color: #f17908;
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    width: 75%;
+}
+
+.contenedorFooterCreaUsuario{
+    width: auto;
+    margin-top: 10%;
+    text-align: center;   
+}
+
+.enlacesFooter{
+   margin-right: 3%;
+   display: inline-block;
+   color: black;
+}
+
+.container .botonValor{
+    background-color: #f17908;
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    width: 75%;
+    
+}
+
+.container .botonActivo{
+    background: #2D3E50;
+    color: whitesmoke;
+}
+
+.btn-add-cart{
+    background-color: #f17908;
+    border-style: groove;
+    border-bottom-left-radius: 10%;
+    font-weight: bold;
+    box-shadow: 0px 5px 8px rgba(17, 6, 6, 0.4);   
+}
+
