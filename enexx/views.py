@@ -17,3 +17,7 @@ def Switch(request):
 def xbox_fisicos(request):
     context={}
     return render(request, 'enexx/xbox_fisicos.html',context)
+
+def ps5digital(request):
+    context={}
+    return render(request, 'enexx/ps5digital.html',context)
