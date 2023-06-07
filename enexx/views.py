@@ -13,3 +13,7 @@ def ps5(request):
 def Switch(request):
     context={}
     return render(request, 'enexx/Switch.html',context)
+
+def xbox_fisicos(request):
+    context={}
+    return render(request, 'enexx/xbox_fisicos.html',context)
