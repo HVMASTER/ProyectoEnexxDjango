@@ -9,3 +9,7 @@ def index(request):
 def ps5(request):
     context={}
     return render(request, 'enexx/ps5.html',context)
+
+def Switch(request):
+    context={}
+    return render(request, 'enexx/Switch.html',context)
