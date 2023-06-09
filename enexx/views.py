@@ -45,3 +45,7 @@ def xbox_dlc(request):
 def inicioSesion(request):
     context={}
     return render(request, 'enexx/inicioSesion.html',context)
+
+def crearUsuario(request):
+    context={}
+    return render(request, 'enexx/crearUsuario.html',context)
