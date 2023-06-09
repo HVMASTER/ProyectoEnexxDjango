@@ -7,4 +7,5 @@ urlpatterns = [
     path('Switch', views.Switch, name='Switch'),
     path('xbox_fisicos', views.xbox_fisicos, name='xbox_fisicos'),
     path('ps5digital', views.ps5digital, name='ps5digital'),
+    path('Switch_digital', views.Switch_digital, name='Switch_digital'),
 ]
