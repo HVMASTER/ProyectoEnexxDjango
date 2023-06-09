@@ -13,4 +13,5 @@ urlpatterns = [
     path('Switch_dlc', views.Switch_dlc, name='Switch_dlc'),
     path('xbox_dlc', views.xbox_dlc, name='xbox_dlc'),
     path('inicioSesion', views.inicioSesion, name='inicioSesion'),
+    path('crearUsuario', views.crearUsuario, name='crearUsuario'),
 ]
