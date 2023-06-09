@@ -10,4 +10,5 @@ urlpatterns = [
     path('Switch_digital', views.Switch_digital, name='Switch_digital'),
     path('xbox_digital', views.xbox_digital, name='xbox_digital'),
     path('ps5dlc', views.ps5dlc, name='ps5dlc'),
+    path('Switch_dlc', views.Switch_dlc, name='Switch_dlc'),
 ]

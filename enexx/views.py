@@ -33,3 +33,7 @@ def xbox_digital(request):
 def ps5dlc(request):
     context={}
     return render(request, 'enexx/ps5dlc.html',context)
+
+def Switch_dlc(request):
+    context={}
+    return render(request, 'enexx/Switch_dlc.html',context)
