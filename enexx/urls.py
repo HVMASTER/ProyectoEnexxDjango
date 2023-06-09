@@ -12,4 +12,5 @@ urlpatterns = [
     path('ps5dlc', views.ps5dlc, name='ps5dlc'),
     path('Switch_dlc', views.Switch_dlc, name='Switch_dlc'),
     path('xbox_dlc', views.xbox_dlc, name='xbox_dlc'),
+    path('inicioSesion', views.inicioSesion, name='inicioSesion'),
 ]
