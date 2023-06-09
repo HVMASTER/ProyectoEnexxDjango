@@ -41,3 +41,7 @@ def Switch_dlc(request):
 def xbox_dlc(request):
     context={}
     return render(request, 'enexx/xbox_dlc.html',context)
+
+def inicioSesion(request):
+    context={}
+    return render(request, 'enexx/inicioSesion.html',context)
