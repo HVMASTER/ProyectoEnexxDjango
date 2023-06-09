@@ -25,3 +25,7 @@ def ps5digital(request):
 def Switch_digital(request):
     context={}
     return render(request, 'enexx/Switch_digital.html',context)
+
+def xbox_digital(request):
+    context={}
+    return render(request, 'enexx/xbox_digital.html',context)
