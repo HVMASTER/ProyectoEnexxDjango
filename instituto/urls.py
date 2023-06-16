@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from enexx import views as enexx_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('enexx.urls')), 
+    path('', enexx_views.index, name='index'),
+    path('enexx/ps5', enexx_views.ps5, name='ps5'),
+    path('enexx/Switch', enexx_views.Switch, name='Switch'),
+
 
 ]

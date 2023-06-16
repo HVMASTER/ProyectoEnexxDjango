@@ -1,0 +1,36 @@
+{% extends 'enexx/index.html' %}
+{% block contenidoBody %}
+{% load static %} 
+                           
+<div class="contenedorCarrusel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carrusel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="ps5"><img src="{% static 'enexx/img/index/ps.jpeg' %}" class="d-block w-100" alt="Exclusivos PS5"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="xbox_fisicos"><img src="{% static 'enexx/img/index/xbox.jpg' %}" class="d-block w-100" alt="exclusivos Xbox"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="Switch"><img src="{% static 'enexx/img/index/nintendo.jpg' %}" class="d-block w-100" alt="Exclusivos Nintendo Switch"></a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
+</div>
+  
+  {% endblock %} 

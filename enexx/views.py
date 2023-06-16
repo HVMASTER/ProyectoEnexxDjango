@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 def index(request):
     context={}
-    return render(request, 'enexx/index.html',context)
+    return render(request, 'enexx/home.html',context)
 
 def ps5(request):
     context={}
