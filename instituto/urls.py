@@ -22,6 +22,8 @@ urlpatterns = [
     path('', enexx_views.index, name='index'),
     path('enexx/ps5', enexx_views.ps5, name='ps5'),
     path('enexx/Switch', enexx_views.Switch, name='Switch'),
+    path('enexx/ps5digital', enexx_views.ps5digital, name='ps5digital'),
+    path('enexx/ps5dlc', enexx_views.ps5dlc, name='ps5dlc'),
 
 
 ]
