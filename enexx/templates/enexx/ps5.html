@@ -1,394 +1,123 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'enexx/css/style.css' %}">
-  <title>ENEXX - PS5 Fisicos</title> 
+{% extends 'enexx/index.html' %}
+{% block contenidoBody %}
+{% load static %} 
 
-  <header class="backgroundHeader">        
-    <div class="navbarHeader">
-        <div class="row col-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-darkslateblue col-12">
-                    <div class="logo">
-                      <a class="navbar-brand" href="index.html">
-                          <img src="{% static 'enexx/img/index/ojo icono.png' %}" width="35" height="35" class="d-inline-block align-top" alt="">
-                          ENEXX
-                          </a>
-                    </div>
-                    <h1>¡Comienza el juego!</h1>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarScroll">
-                        <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll">
-                          <li class="nav-item active">
-                            <div class="navbarLink">
-                              <a class="nav-link" href="index.html">Pagina principal <span class="sr-only">(current)</span></a>
-                            </div>
-                          </li>
-                          <li id="linkOficiales" class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                              Sitios Oficiales
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="https://www.playstation.com/es-cl/">Ps5</a></li>
-                              <li><a class="dropdown-item" href="https://www.xbox.com/es-CL">Xbox</a></li>
-                              <li><a class="dropdown-item" href="https://www.nintendo.com/es-cl/">Nintendo Switch</a></li>
-                            </ul>
-                          </li>
-                          <li class="nav-item active">
-                            <div class="navbarLink">
-                              <a class="nav-link" href="index.html">Soporte<span class="sr-only">(current)</span></a>
-                            </div>
-                          </li>
-                        </ul>
-                        <div class="btn-group">
-                          <div class="contenedorBtnLogin">
-                              <a href="inicioSesion.html" class="btn btn-iniciarsesion btn-lg font-weight-bold" role="button" aria aria-pressed="true">Iniciar sesión</a>
-                              <p>|</p>
-                              <a href="crearUsuario.html" class="btn btn-registrarse btn-lg font-weight-bold" role="button" aria aria-pressed="true">Registrarse</a>
-                          </div>
-                        </div>
-                      <form class="d-flex">
-                        <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-success" type="submit">Buscar</button>
-                      </form>
-                      <div class="container-icon">
-                        <div class="container-cart-icon">
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                                  </svg>                                             
-                                <div class= "count-products">
-                                  <span id="contador-productos">0</span>  
-                                </div>
-                            </div>                    
-
-                      <div class="container-cart-products hidden-cart">
-                        <div class="row-product">
-                          <div class="cart-product"> 
-                            <div class ="info-cart-product">
-                              <span class="cantidad-producto-carrito">0</span>
-                              <p class="titulo-producto-carrito"></p>
-                              <span class="precio-producto-carrito">0</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                                                
-                          </div>
-                        </div>
-                        
-                      <div class="cart-total"><h3>Total</h3>
-                      <span class="total-pagar">$0</span></div>
-                      </div>
-                    </div>
-                  </div>
-                </nav>
-            </div>
+  <div class="fondo">
+    <div class="productos">
+      <section class="contenedorFiltro d-none d-sm-none d-md-block" >
+        <div class="container">
+          <h5>Categorias</h5>
+          <button class="botonValor" id="todos">Todos</button><br>
+          <button class="botonValor" id="solo">Solo Jugador</button><br>
+          <button class="botonValor" id="multi">Multi Jugador</button><br>
+          <button class="botonValor" id="1stp">Primera Persona</button><br>
+          <button class="botonValor" id="accion">Accion</button><br>
+          <button class="botonValor" id="aventura">Aventura</button><br>
+          <button class="botonValor" id="casual">Casual</button><br>
+          <button class="botonValor" id="fps">FPS</button><br>
+          <button class="botonValor" id="estrategia">Estrategia</button><br>
+          <button class="botonValor" id="rpg">RPG</button><br>
+          <button class="botonValor" id="plataforma">Plataforma</button><br>
+          <button class="botonValor" id="horror">Horror</button><br>
+          <button class="botonValor" id="deportes">Deportes</button><br>
+          <button class="botonValor" id="carrera">Carreras</button><br>
+          <button class="botonValor" id="lucha">Lucha</button><br>
+          <button class="botonValor" id="arcade">Arcade</button><br>
+          <button class="botonValor" id="vr">VR</button><br>
+    
         </div>
-  </header>
-</head>
-<body class="fondo">
-  
-
-    <div class="DropdownBody">
-      <div class="contenedorBotones"> 
-        <div class="contenedorBot2">
-          <div class="btn-group">
-            <div class="separadorBoton1">
-              <button type="button" class="btn btn-ps5 dropdown-toggle btn-lg border-0 font-weight-bold" data-toggle="dropdown" aria-expanded="false">
-                Ps5
-              </button>
-                <div class="dropdown-menu textoBoton">
-                  <a class="dropdown-item" href="ps5.html">Juegos fisicos</a>
-                  <a class="dropdown-item" href="ps5digital.html">Juegos digitales</a>
-                  <a class="dropdown-item" href="ps5dlc.html">DLC</a>
-                </div>
-            </div>
-          </div>
-          <div class="btn-group">
-            <div class="separadorBoton1">
-              <button type="button" class="btn btn-xbox dropdown-toggle btn-lg border-0 font-weight-bold" data-toggle="dropdown" aria-expanded="false">
-                Xbox
-              </button>
-              <div class="dropdown-menu textoBoton">
-                <a class="dropdown-item" href="xbox_fisicos.html">Juegos fisicos</a>
-                <a class="dropdown-item" href="xbox_digital.html">Juegos digitales</a>
-                <a class="dropdown-item" href="xbox_dlc.html">DLC</a>
-              </div>
-            </div>
-          </div>
-          <div class="btn-group">
-              <div class="separadorBoton1">
-                <button type="button" class="btn btn-switch dropdown-toggle btn-lg border-0 font-weight-bold" data-toggle="dropdown" aria-expanded="true">
-                  Nintendo switch
-                </button>
-                <div class="dropdown-menu textoBoton">
-                  <a class="dropdown-item" href="Switch.html">Juegos fisicos</a>
-                  <a class="dropdown-item" href="Switch_digital.html">Juegos digitales</a>
-                  <a class="dropdown-item" href="Switch_dlc.html">DLC</a>
+      </section>
+      <!--Contenedores de los juegos-->
+          <div class="contenedorJuegos">
+              <div class="card solo accion aventura">
+                <img src="{% static 'enexx/img/ps5/horizon.jpg'%}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Horizon forbidden west</h5>
+                  <p class="card-text">$59990</p>
+                  <!--<div class="ajusteBoton">-->
+                  <button class="btn-add-cart">Comprar</button>
+                  <!--</div>-->
                 </div>
               </div>
-          </div>
-        </div>
-
-</div>
-                                  
+    
+              <div class="card solo accion horror">
+                <img src="{% static 'enexx/img/ps5/demonsouls.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Demon Souls remake</h5>
+                  <p class="card-text">$47990</p>
+                  <!--<div class="ajusteBoton">-->
+                  <button class="btn-add-cart">Comprar</button>
+                  <!--</div>-->
+                </div>
               </div>
-              
+    
+              <div class="card solo accion aventura">
+                <img src="{% static 'enexx/img/ps5/godofwar.jpeg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">God of War Ragnarok </h5>
+                  <p class="card-text">$57990</p>
+                  <!--<div class="ajusteBoton">-->
+                  <button  class="btn-add-cart">Comprar</button>
+                  <!--</div>-->
+                </div>
+              </div>
+              <div class="card multi carrera deporte">
+                <img src="{% static 'enexx/img/ps5/granturismo.jpeg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Gran Turismo 7 </h5>
+                  <p class="card-text">$49990</p>
+                  <!--<div class="ajusteBoton">-->
+                  <button  class="btn-add-cart">Comprar</button>
+                  <!--</div>-->
+                </div>
+              </div>
+              <div class="card multi accion lucha">
+                <img src="{% static 'enexx/img/ps5/mk11ultimate.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Mortal Kombat 11 ultimate </h5>
+                  <p class="card-text">$39990</p>
+                  <!--<div class="ajusteBoton">-->
+                  <button  class="btn-add-cart">Comprar</button>
+                  <!--</div>-->
+                </div>
+              </div>
+              <div class="card 1stp accion aventura">
+                <img src="{% static 'enexx/img/ps5/cyberpunk2077.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">CyberPunk 2077 </h5>
+                  <p class="card-text">$29990</p>
+                  <!--<div class="ajusteBoton">-->
+                  <button  class="btn-add-cart">Comprar</button>
+                  <!--</div>-->
+                </div>
+              </div>
+              <div class="card solo accion aventura">
+                <img src="{% static 'enexx/img/ps5/stray.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Stray </h5>
+                  <p class="card-text">$29990</p>
+                  <!--<div class="ajusteBoton">-->
+                  <button  class="btn-add-cart">Comprar</button>
+                  <!--</div>-->
+                </div>
+              </div>
+              <div class="card solo accion horror">
+                <img src="{% static 'enexx/img/ps5/residentevil4.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Resident Evil 4 </h5>
+                  <p class="card-text">$59990</p>
+                  <!--<div class="ajusteBoton">-->
+                  <button  class="btn-add-cart">Comprar</button>
+                  <!--</div>-->
+                </div>
+              </div>
+    
+            </div>
+            <!--Fin contenedor de juegos-->
     </div>
   </div>
-  <!---filtro-->
-        <div class="productos">
-            <section class="contenedorFiltro d-none d-sm-none d-md-block" >
-              <div class="container">
-                <h5>Categorias</h5>
-                <button class="botonValor" id="todos">Todos</button><br>
-                <button class="botonValor" id="solo">Solo Jugador</button><br>
-                <button class="botonValor" id="multi">Multi Jugador</button><br>
-                <button class="botonValor" id="1stp">Primera Persona</button><br>
-                <button class="botonValor" id="accion">Accion</button><br>
-                <button class="botonValor" id="aventura">Aventura</button><br>
-                <button class="botonValor" id="casual">Casual</button><br>
-                <button class="botonValor" id="fps">FPS</button><br>
-                <button class="botonValor" id="estrategia">Estrategia</button><br>
-                <button class="botonValor" id="rpg">RPG</button><br>
-                <button class="botonValor" id="plataforma">Plataforma</button><br>
-                <button class="botonValor" id="horror">Horror</button><br>
-                <button class="botonValor" id="deportes">Deportes</button><br>
-                <button class="botonValor" id="carrera">Carreras</button><br>
-                <button class="botonValor" id="lucha">Lucha</button><br>
-                <button class="botonValor" id="arcade">Arcade</button><br>
-                <button class="botonValor" id="vr">VR</button><br>
-                
-              </div>
-                
-                
-                
-      
-            </section>
-            <!--Contenedores de los juegos-->
-                <div class="contenedorJuegos">
-                    <div class="card solo accion aventura">
-                      <img src="{% static 'enexx/img/ps5/horizon.jpg'%}" class="card-img-top">
-                      <div class="card-body">
-                        <h5 class="card-title">Horizon forbidden west</h5>
-                        <p class="card-text">$59990</p>
-                        <!--<div class="ajusteBoton">-->
-                          <button class="btn-add-cart">Comprar</button>
-                        <!--</div>-->
-                      </div>
-                    </div>
-                  
-                              
-                    <div class="card solo accion horror">
-                      <img src="{% static 'enexx/img/ps5/demonsouls.jpg'%}" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Demon Souls remake</h5>
-                        <p class="card-text">$47990</p>
-                        <!--<div class="ajusteBoton">-->
-                          <button class="btn-add-cart">Comprar</button>
-                        <!--</div>-->
-                      </div>
-                    </div>
-                  
-                            
-                    <div class="card solo accion aventura">
-                      <img src="{% static 'enexx/img/ps5/godofwar.jpeg'%}" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">God of War Ragnarok </h5>
-                        <p class="card-text">$57990</p>
-                        <!--<div class="ajusteBoton">-->
-                          <button  class="btn-add-cart">Comprar</button>
-                        <!--</div>-->
-                      </div>
-                    </div>
+<!--Fin contenedor de productos-->
+{% endblock %} 
 
-                    <div class="card multi carrera deporte">
-                      <img src="{% static 'enexx/img/ps5/granturismo.jpeg'%}" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Gran Turismo 7 </h5>
-                        <p class="card-text">$49990</p>
-                        <!--<div class="ajusteBoton">-->
-                          <button  class="btn-add-cart">Comprar</button>
-                        <!--</div>-->
-                      </div>
-                    </div>
-                    <div class="card multi accion lucha">
-                      <img src="{% static 'enexx/img/ps5/mk11ultimate.jpg'%}" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Mortal Kombat 11 ultimate </h5>
-                        <p class="card-text">$39990</p>
-                        <!--<div class="ajusteBoton">-->
-                          <button  class="btn-add-cart">Comprar</button>
-                        <!--</div>-->
-                      </div>
-                    </div>
-                    <div class="card 1stp accion aventura">
-                      <img src="{% static 'enexx/img/ps5/cyberpunk2077.jpg'%}" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">CyberPunk 2077 </h5>
-                        <p class="card-text">$29990</p>
-                        <!--<div class="ajusteBoton">-->
-                          <button  class="btn-add-cart">Comprar</button>
-                        <!--</div>-->
-                      </div>
-                    </div>
-                    <div class="card solo accion aventura">
-                      <img src="{% static 'enexx/img/ps5/stray.jpg'%}" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Stray </h5>
-                        <p class="card-text">$29990</p>
-                        <!--<div class="ajusteBoton">-->
-                          <button  class="btn-add-cart">Comprar</button>
-                        <!--</div>-->
-                      </div>
-                    </div>
-                    <div class="card solo accion horror">
-                      <img src="{% static 'enexx/img/ps5/residentevil4.jpg'%}" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Resident Evil 4 </h5>
-                        <p class="card-text">$59990</p>
-                        <!--<div class="ajusteBoton">-->
-                          <button  class="btn-add-cart">Comprar</button>
-                        <!--</div>-->
-                      </div>
-                    </div>
-                  
-                
-                  </div>
-  </div> 
-  
-  <footer>
-    <section>
-      <div class="container row col-12">
-        <div class="h2Categoria">
-          <h2>Categorias</h2>
-        </div>
-      </div>
-      <div class="contenedorCateg">
-        <div class="estiloCarta">
-          <div class="card colorFondoCard">
-            <div class="estiloIcono">
-              <img src="{% static 'enexx/img/index/icono Accion.png' %}" class="card-img" alt="...">
-            </div>
-              <p class="card-text">Acción</p>
-          </div>
-        </div>
-        <div class="estiloCarta">
-          <div class="card colorFondoCard">
-            <div class="estiloIcono">
-              <img src="{% static 'enexx/img/index/icono mapa tesoro.png' %}" class="card-img" alt="...">
-            </div>
-              <p class="card-text">Aventura</p>
-          </div>
-        </div>
-        <div class="estiloCarta">
-          <div class="card colorFondoCard">
-            <div class="estiloIcono">
-              <img src="{% static 'enexx/img/index/icono estrategia.png' %}" class="card-img" alt="...">
-            </div>
-              <p class="card-text">Estrategia</p>
-          </div>
-        </div>
-        <div class="estiloCarta">
-          <div class="card colorFondoCard">
-            <div class="estiloIcono">
-              <img src="{% static 'enexx/img/index/icono casco demonio.png' %}" class="card-img" alt="...">
-            </div>
-              <p class="card-text">RPG</p>
-          </div>
-        </div>
-        <div class="estiloCarta">
-          <div class="card colorFondoCard">
-            <div class="estiloIcono">
-              <img src="{% static 'enexx/img/index/icono volante.png' %}" class="card-img" alt="...">
-            </div>
-              <p class="card-text">Simulacion</p>
-          </div>
-        </div>
-        
-      </div>
-          <div class="container-fluid">
-            <div class="imgFooter">
-              <div class="imgWebPay">
-                    <img src="{% static 'enexx/img/index/webpay.png' %}" class="img-fluid" alt=""> 
-              </div>
-              <div class="imgWebPay">
-                <img src="{% static 'enexx/img/index/PayPal-Logo.png' %}" class="img-fluid" alt="">
-              </div>
-              <div class="imgWebPay">
-                <img src="{% static 'enexx/img/index/servipag logo.png' %}" class="img-fluid" alt="">
-              </div>
-              <div class="imgWebPay">
-                <img src="{% static 'enexx/img/index/visa logo.png' %}" class="img-fluid" alt="">
-              </div>
-            </div>
-          </div>
-    </section> 
-    <section>
-        <div class="contenedorEnlaces">
-          <div class="card tamañoCardFooter">
-            <div class="card-header">
-              Enexx
-            </div>
-            <div class="card-body">
-              <a href="#">Sobre nosotros</a>
-            </div>
-          </div>
-          <div class="card tamañoCardFooter">
-            <div class="card-header">
-              Comprar
-            </div>
-            <div class="card-body">
-              <a href="#">Como comprar</a>
-            </div>
-          </div>
-          <div class="card tamañoCardFooter">
-            <div class="card-header">
-              Ayuda
-            </div>
-            <div class="card-body">
-              <a href="#">Crear un ticket</a>
-            </div>
-          </div>
-          <div class="card tamañoCardFooter">
-            <div class="card-header">
-              Siguenos
-            </div>
-            <div class="card-body">
-              <div class="iconoRedes">
-                <a href="#"><img src="{% static 'enexx/img/index/icono facebook.png' %}" alt="Facebook" class="reduccionImagen"></a>
-                <a href="#"><img src="{% static 'enexx/img/index/icono instagram.png' %}" alt="Instagram" class="reduccionImagen"></a>
-                <a href="#"><img src="{% static 'enexx/img/index/icono twitter.png' %}" alt="Twitter" class="reduccionImagen"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-    <section>
-      <div class="contenedorFinalFooter">
-        <div class="textFinal1">
-          Un orgulloso socio de
-        </div>
-        <div class="imgFinal">
-          <img src="{% static 'enexx/img/index/icono xbox.png' %}" alt="" class="reduccionImagen2">
-          <img src="{% static 'enexx/img/index/icono konami.png' %}" alt="" class="reduccionImagen2">
-          <img src="{% static 'enexx/img/index/icono nintendo.png' %}" alt="" class="reduccionImagen2">
-        </div>
-        Copyright © 2023 Enexx. Todos los derechos reservados. SA “Helis play”, C/Gyneju 4-333, Valparaiso, República de Chile
-      </div>
-    </section>              
-  </footer>
- 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
-  <script src="js/index.js"></script>
-</body>
-</html>

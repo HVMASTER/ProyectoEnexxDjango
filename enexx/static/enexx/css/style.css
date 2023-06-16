@@ -27,12 +27,12 @@
 }
 
 .contenedorBotones{
-    width: 90%;
+    width: 100%;
     height: auto;
-    margin-left: 5%;
-    margin-right: 5%;
     display: inline-block;
     display: flex;
+    border: solid 2px;
+    padding: 0 5% 0 5%;
 }
 
 .separadorBoton1{
