@@ -24,6 +24,6 @@ urlpatterns = [
     path('enexx/Switch', enexx_views.Switch, name='Switch'),
     path('enexx/ps5digital', enexx_views.ps5digital, name='ps5digital'),
     path('enexx/ps5dlc', enexx_views.ps5dlc, name='ps5dlc'),
-    path('enexx/Switch', enexx_views.Switch, name='Switch'),
+    path('enexx/Switch_digital', enexx_views.Switch_digital, name='Switch_digital'),
     path('enexx/Switch_dlc', enexx_views.Switch_dlc, name='Switch_dlc'),
 ]
