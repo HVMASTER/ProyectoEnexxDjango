@@ -30,95 +30,20 @@
       </section>
   
       <!--Contenedores de los juegos-->
-          <section class="contenedorJuegos">
-            <div class="card" id="carrera">
-              <img src="img/switch/mairoKart.jpg" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Mario Kart 8 Deluxe</h5>
-                <p class="card-text">$49.990</p>
-                    <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                    <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card" id="aventura">
-              <img src="img/switch/Zelda.jpg" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">The Legend of Zelda Breath of the Wild</h5>
-                <p class="card-text">$44.990</p>
-                    <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                    <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card" id="lucha">
-              <img src="img/switch/SSBU.jpg" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Super Smash Bros. Ultimate</h5>
-                <p class="card-text">$49.990</p>
-                    <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                    <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card" id="aventura">
-              <img src="img/switch/PokemonLA.jpg" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Pokémon Legend Arceus</h5>
-                <p class="card-text">$44.990</p>
-                    <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                    <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card" id="accion">
-              <img src="img/switch/splatoon3.jpg" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Splatoon 3</h5>
-                <p class="card-text">$45.900</p>
-                    <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                    <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card" id="plataforma">
-              <img src="img/switch/MetroidDread.jpg" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Metroid Dread</h5>
-                <p class="card-text">$51.990</p>
-                    <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                    <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card"  id="aventura">
-              <img src="img/switch/MarioOd.jpg" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Super Mario Odyssey</h5>
-                <p class="card-text">$51.990</p>
-                    <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                    <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card" id="horror">
-              <img src="img/switch/LuigiM.jpg" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Luigi's Mansion 3</h5>
-                <p class="card-text">$</p>
-                    <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                    <!--</div>-->
-              </div>
-            </div>
-          </section>
+      <div class="contenedorJuegos"> 
+        {% for juego in juego %}    
+          <div class="card solo accion aventura">
+                    {% if juego.imagen %}                       
+                    <img src="{{juego.imagen.url}}" class="card-img-top">
+                    {% endif %}
+                    <div class="card-body">
+                      <h5 class="card-title">{{juego.nombre}}</h5>
+                      <p class="card-text">{{juego.precio}}</p>               
+                      <button class="btn-add-cart">Comprar</button>                 
+                    </div>
+                </div> 
+        {% endfor %}           
+          </div>
           <!--FIN Contenedores de los juegos-->
   </div>
 </div>
