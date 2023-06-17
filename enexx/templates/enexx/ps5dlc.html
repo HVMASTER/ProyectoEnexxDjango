@@ -30,91 +30,21 @@
     </section>
 
     <!--Contenedores de los juegos-->
-        <section class="contenedorJuegos">
-            <div class="card" id="aventura">
-              <img src="{% static 'enexx/img/ps5/dlc/destiny.jpg'%}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Destiny</h5>
-                <p class="card-text">$9990</p>
-                <!--<div class="ajusteBoton">-->
-                <button class="btn-add-cart">Comprar</button>
-                <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card" id="lucha">  
-              <img src="{% static 'enexx/img/ps5/dlc/mk11pack.jpeg'%}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">MK Pack</h5>
-                <p class="card-text">$10990</p>
-                <!--<div class="ajusteBoton">-->
-                 <button class="btn-add-cart">Comprar</button>
-                <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card" id="accion">
-              <img src="{% static 'enexx/img/ps5/dlc/acvalhallaseason.jpeg'%}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">AC ValhallaSeason pass </h5>
-                <p class="card-text">$9990</p>
-                <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                <!--</div>-->
-              </div>
-            </div>
-  
-            <div class="card" id="lucha">
-              <img src="{% static 'enexx/img/ps5/dlc/dbfz.jpeg'%}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Fighter Z pass 2 </h5>
-                <p class="card-text"> $14.990</p>
-                  <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                  <!--</div>-->
-              </div>
-            </div>
-            <div class="card" id="accion">
-              <img src="{% static 'enexx/img/ps5/dlc/acoriginsseason.jpg'%}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Assassin's creed Origins Season pass </h5>
-                <p class="card-text"> $17.990</p>
-                  <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                  <!--</div>-->
-              </div>
-            </div>
-            <div class="card" id="aventura">
-              <img src="{% static 'enexx/img/ps5/dlc/tw3pass.jpg'%}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">The witcher 3 Season pass </h5>
-                <p class="card-text"> $9.990</p>
-                  <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                  <!--</div>-->
-              </div>
-            </div>
-            <div class="card" id="horror">
-              <img src="{% static 'enexx/img/ps5/dlc/re2keyblobal.jpeg'%}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Resident Evil 2 Key Global </h5>
-                <p class="card-text"> $9.990</p>
-                  <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                  <!--</div>-->
-              </div>
-            </div>
-            <div class="card" id="horror">
-              <img src="{% static 'enexx/img/ps5/dlc/traumapack.jpeg'%}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Resident Evil Village Trauma Pack </h5>
-                <p class="card-text"> $12.990</p>
-                  <!--<div class="ajusteBoton">-->
-                <button  class="btn-add-cart">Comprar</button>
-                  <!--</div>-->
-              </div>
-            </div>
-        </section>
+
+    <div class="contenedorJuegos"> 
+      {% for juego in juego %}    
+        <div class="card solo accion aventura">
+                  {% if juego.imagen %}                       
+                  <img src="{{juego.imagen.url}}" class="card-img-top">
+                  {% endif %}
+                  <div class="card-body">
+                    <h5 class="card-title">{{juego.nombre}}</h5>
+                    <p class="card-text">{{juego.precio}}</p>               
+                    <button class="btn-add-cart">Comprar</button>                 
+                  </div>
+              </div> 
+      {% endfor %}           
+        </div>
   
   </div>
 </div>
