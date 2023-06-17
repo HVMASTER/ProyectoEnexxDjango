@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from enexx import views as enexx_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,3 +32,5 @@ urlpatterns = [
     path('enexx/xbox_dlc', enexx_views.xbox_dlc, name='xbox_dlc'),
     path('enexx/xbox_fisicos', enexx_views.xbox_fisicos, name='xbox_fisicos'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
