@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MESSEGAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
 
 # Application definition
 
@@ -38,9 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    
+    'crispy_forms',    
     'enexx',
+    'administrador',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +62,7 @@ ROOT_URLCONF = 'instituto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates", ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +74,9 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGIN_REDIRECT_URL="menu"
+LOGOUT_REDIRECT_URL="index"
 
 WSGI_APPLICATION = 'instituto.wsgi.application'
 

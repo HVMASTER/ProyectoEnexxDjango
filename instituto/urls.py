@@ -15,22 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from enexx import views as enexx_views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', enexx_views.index, name='index'),
-    path('enexx/ps5', enexx_views.ps5, name='ps5'),
-    path('enexx/ps5digital', enexx_views.ps5digital, name='ps5digital'),
-    path('enexx/ps5dlc', enexx_views.ps5dlc, name='ps5dlc'),
-    path('enexx/Switch', enexx_views.Switch, name='Switch'),
-    path('enexx/Switch_digital', enexx_views.Switch_digital, name='Switch_digital'),
-    path('enexx/Switch_dlc', enexx_views.Switch_dlc, name='Switch_dlc'),
-    path('enexx/xbox_digital', enexx_views.xbox_digital, name='xbox_digital'),
-    path('enexx/xbox_dlc', enexx_views.xbox_dlc, name='xbox_dlc'),
-    path('enexx/xbox_fisicos', enexx_views.xbox_fisicos, name='xbox_fisicos'),
+    path('', include ('enexx.urls')),
+    path('', include ('administrador.urls')),
+    path('accounts/',include('django.contrib.auth.urls'))
+    
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
