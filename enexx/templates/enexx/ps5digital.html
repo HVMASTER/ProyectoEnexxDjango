@@ -32,7 +32,7 @@
       <!--Contenedores de los juegos-->
       <div class="contenedorJuegos"> 
         {% for juego in juego %}    
-          <div class="card solo accion aventura">
+          <div class="card {{juego.genero}}">
                     {% if juego.imagen %}                       
                     <img src="{{juego.imagen.url}}" class="card-img-top">
                     {% endif %}

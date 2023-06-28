@@ -1,0 +1,29 @@
+{% extends "enexx/base.html" %}
+
+{% block contenidoBase %}
+
+
+<div class="row">
+  <div class="col-12 col-md-6 offset-md-3">
+      <div class="card contenedorRegistro">
+          <div class="card-body">
+              <h2>Contactanos!!</h2>
+              <hr>
+              <form action="" class=" " method="post">
+
+                  {% csrf_token %}
+      
+                  {{ form }}
+      
+                  <br>
+                  <button type="submit" id="btn btn-primary">Enviar</button>
+              
+              </form>
+              {{mensaje}}
+          </div>
+      </div>
+      
+  </div>
+</div>
+
+{% endblock %}

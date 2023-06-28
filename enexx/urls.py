@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('ps5', views.ps5, name='ps5'),
@@ -14,4 +15,11 @@ urlpatterns = [
     path('xbox_dlc', views.xbox_dlc, name='xbox_dlc'),
     path('inicioSesion', views.inicioSesion, name='inicioSesion'),
     path('crearUsuario', views.crearUsuario, name='crearUsuario'),
+    path('contacto', views.contacto, name='contacto'),
+    path('agregarJuego', views.agregarJuego, name='agregarJuego'),
+    path('listarJuego', views.listarJuego, name='listarJuego'),
+    path('modificarJuego/<id>', views.modificarJuego, name='modificarJuego'),
+    path('eliminarJuego/<id>', views.eliminarJuego, name='eliminarJuego'),
+    
+
 ]

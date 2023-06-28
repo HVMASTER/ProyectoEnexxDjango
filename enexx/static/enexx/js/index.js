@@ -179,3 +179,25 @@ $(document).ready(function(){
   })
 });
 
+
+function EliminarJuego(id){
+  Swal.fire({
+    title: '¿Estás seguro de eliminar el juego?',
+    text: "No podrás revertir esto!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#dc3545',
+    cancelButtonColor: '#17a2b8',
+    confirmButtonText: 'Si, eliminarlo!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Eliminado!',
+        'El juego ha sido eliminado.',
+        'success'
+      )
+      window.location.href = 'enexx/eliminarJuego.html?id='+id+'';
+    }
+  })
+}
+

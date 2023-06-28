@@ -1,5 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Juego, Tipo
+from .forms import ContactoFrom, JuegoForm
+from django.contrib import messages
+from django.core.paginator import Paginator
+from django.http import Http404
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -97,3 +102,78 @@ def inicioSesion(request):
 def crearUsuario(request):
     context={}
     return render(request, 'enexx/crearUsuario.html',context)
+
+
+def contacto(request):
+    data = {
+        'form': ContactoFrom()
+    }
+
+    if request.method == 'POST':#si el metodo es post se guardan los datos del formulario
+        formulario = ContactoFrom(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = "Contacto guardado"
+        else:
+            data['form'] = formulario
+    return render(request, 'enexx/contacto.html', data)
+
+@login_required
+def agregarJuego(request):
+    data = {
+        'form': JuegoForm()
+    }
+    if request.method == 'POST':
+        formulario = JuegoForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = "Juego guardado"
+        else:
+            data['form'] = formulario
+    return render(request, 'enexx/productos/agregarJuego.html', data)
+
+@login_required
+def listarJuego(request):
+
+    juego = Juego.objects.all()
+
+    page = request.GET.get('page', 1)
+
+    try:
+        paginator = Paginator(juego, 10)
+        juego = paginator.page(page)
+    except:
+        raise Http404
+
+    data={
+        'entity': juego,
+        'paginator': paginator
+    }
+
+    return render(request, 'enexx/productos/listarJuego.html', data)
+    
+@login_required
+def modificarJuego(request, id):
+    
+    juego = get_object_or_404(Juego, id=id)
+
+    data = {
+        'form': JuegoForm(instance=juego) #instance es para que se muestren los datos en el formulario
+    }
+    if request.method == 'POST':
+        formulario = JuegoForm(data=request.POST, instance=juego, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Juego Editado Correctamente")
+            return redirect(to="listarJuego")
+        else:
+            data['form'] = formulario
+
+
+    return render(request, 'enexx/productos/modificarJuego.html', data)
+
+def eliminarJuego(request, id):
+    juego = get_object_or_404(Juego, id=id)
+    juego.delete()
+    messages.success(request, "Juego Eliminado Correctamente")
+    return redirect(to="listarJuego")

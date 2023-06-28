@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Consola, Juego, Tipo
+from .models import Consola, Juego, Tipo, Contacto
 
 class JuegoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'precio', 'genero', 'cantidad', 'consola', 'tipo')#esto es para que se muestren estos campos en el admin
@@ -12,3 +12,4 @@ class JuegoAdmin(admin.ModelAdmin):
 admin.site.register(Consola)
 admin.site.register(Juego, JuegoAdmin)
 admin.site.register(Tipo)
+admin.site.register(Contacto)#esto es para que se muestren los modelos en el admin
