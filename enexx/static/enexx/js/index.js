@@ -196,7 +196,7 @@ function EliminarJuego(id){
         'El juego ha sido eliminado.',
         'success'
       )
-      window.location.href = 'enexx/eliminarJuego.html?id='+id+'';
+      window.location.href = 'eliminarJuego/'+id;
     }
   })
 }

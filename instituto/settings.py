@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'crispy_forms',    
     'enexx',
     'administrador',
+    'crispy_bootstrap4',#pip install django-crispy-bootstrap4
 ]
 
+CRISPY_ALOWED_TEMPLATE_PACKS = 'bootstrap4'#pip install django-crispy-bootstrap4
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
