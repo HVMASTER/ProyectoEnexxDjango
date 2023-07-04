@@ -585,3 +585,14 @@
     box-shadow: 0px 5px 8px rgba(17, 6, 6, 0.4);   
 }
 
+.boton-reg{
+    background-color: #f17908;
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    border: #000;
+    border-style: groove;
+    
+    
+}
+

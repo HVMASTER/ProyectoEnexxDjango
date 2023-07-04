@@ -5,9 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 class ContactoFrom(forms.ModelForm):
 
-    nombre = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control col-md-6'}))
-    correo = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control col-md-6 flex-wrap'}))    
-    mensaje = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control col-md-6'}))
+    
     
 
 
