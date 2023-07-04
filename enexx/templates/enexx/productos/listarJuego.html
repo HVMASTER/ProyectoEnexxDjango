@@ -31,8 +31,8 @@
                 <td>{{ juego.tipo | title }}</td>
                 <td>
                   <a href="{% url 'modificarJuego' juego.id %}" class="btn btn-info btn-sm">Editar</a>
-                  <a href="{% url 'eliminarJuego' juego.id %}" class="btn btn-danger btn-sm">Eliminar</a>
-                  <!-- <a href="#" onclick="EliminarJuego({{juego.id}})" class="btn btn-danger btn-sm">Eliminar</a> -->
+                  <!-- <a href="{% url 'eliminarJuego' juego.id %}" class="btn btn-danger btn-sm">Eliminar</a> -->
+                  <a href="#" onclick="EliminarJuego({{juego.id}})" class="btn btn-danger btn-sm">Eliminar</a> 
                 </td>
               </tr>
     
