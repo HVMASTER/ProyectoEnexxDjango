@@ -5,18 +5,16 @@
 
 <div class="row">
     <div class="col-12 col-md-6 offset-md-3 ">
-        <div class="card">
+        <div class="card contenedorRegistro">
             <div class="card-body ">
-                <h2>Ingresa a sistema</h2>
+                <h2>Iniciar Sesión</h2>
                 <hr>
                 <form action="" method="post" >
                     {% csrf_token %}
                     {{ form | crispy }}
-                    
-                    <a href="{% url 'index'%}">home</a> |
-                    <a href="{% url 'registro'%}">registro</a>
-                    <br>
-                    <input type="submit" value="Ingresar">
+                    <hr>
+                    <p>¿aun no tienes una cuenta?<a href="{% url 'registro'%}"> registrate aqui!</a></p>
+                    <input type="submit" value="Ingresar" class="btn boton-reg">
                 </form>
             </div>
         </div>
