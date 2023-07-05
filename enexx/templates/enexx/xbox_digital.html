@@ -30,14 +30,14 @@
   
       <!--Contenedores de los juegos-->
       <div class="contenedorJuegos"> 
-        {% for juego in juego %}    
+        {% for juego in juegos %}    
           <div class="card {{juego.genero}}">
                     {% if juego.imagen %}                       
                     <img src="{{juego.imagen.url}}" class="card-img-top">
                     {% endif %}
                     <div class="card-body">
-                      <h5 class="card-title">{{juego.nombre}}</h5>
-                      <p class="card-text">{{juego.precio}}</p>               
+                      <h5 class="card-title">{{juego.nombre | title }}</h5>
+                      <p class="card-text">${{juego.precio}}</p>               
                       <button class="btn-add-cart">Comprar</button>                 
                     </div>
                 </div> 
