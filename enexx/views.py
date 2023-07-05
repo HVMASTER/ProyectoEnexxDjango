@@ -118,7 +118,7 @@ def contacto(request):
             data['form'] = formulario
     return render(request, 'enexx/contacto.html', data)
 
-@permission_required
+@permission_required('enexx.add_juego')
 def agregarJuego(request):
     data = {
         'form': JuegoForm()
@@ -132,7 +132,7 @@ def agregarJuego(request):
             data['form'] = formulario
     return render(request, 'enexx/productos/agregarJuego.html', data)
 
-@permission_required
+@permission_required('enexx.view_juego')
 def listarJuego(request):
 
     juego = Juego.objects.all()
@@ -152,7 +152,7 @@ def listarJuego(request):
 
     return render(request, 'enexx/productos/listarJuego.html', data)
     
-@permission_required
+@permission_required('enexx.change_juego')
 def modificarJuego(request, id):
     
     juego = get_object_or_404(Juego, id=id)
@@ -172,7 +172,7 @@ def modificarJuego(request, id):
 
     return render(request, 'enexx/productos/modificarJuego.html', data)
 
-@permission_required
+@permission_required('enexx.delete_juego')
 def eliminarJuego(request, id):
     juego = get_object_or_404(Juego, id=id)
     juego.delete()
