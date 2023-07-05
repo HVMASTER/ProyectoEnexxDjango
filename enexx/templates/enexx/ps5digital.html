@@ -30,22 +30,26 @@
   
       </section>
       <!--Contenedores de los juegos-->
+  <!--Contenedores de los juegos-->
+    {% load humanize %}
       <div class="contenedorJuegos"> 
-        {% for juego in juego %}    
-          <div class="card {{juego.genero}}">
-                    {% if juego.imagen %}                       
-                    <img src="{{juego.imagen.url}}" class="card-img-top">
-                    {% endif %}
-                    <div class="card-body">
-                      <h5 class="card-title">{{juego.nombre}}</h5>
-                      <p class="card-text">{{juego.precio}}</p>               
-                      <button class="btn-add-cart">Comprar</button>                 
-                    </div>
-                </div> 
-        {% endfor %}           
-            </div>
-          <!--FIN Contenedores de los juegos-->
+    {% for juego in juegos %}    
+      <div class="card {{juego.genero}}">
+                {% if juego.imagen %}                       
+                <img src="{{juego.imagen.url}}" class="card-img-top">
+                {% endif %}
+                <div class="card-body">
+                  <h5 class="card-title">{{ juego.nombre | title }}</h5>
+                  <p class="card-text">${{ juego.precio }}</p>               
+                  <button class="btn-add-cart">Comprar</button>                 
+                </div>
+            </div> 
+    {% endfor %}           
+        </div>
+        
+            <!--Fin contenedor de juegos-->
+    </div>
   </div>
-</div> 
-
+<!--Fin contenedor de productos-->
 {% endblock %} 
+

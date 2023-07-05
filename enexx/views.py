@@ -16,81 +16,81 @@ def index(request):
 
 def ps5(request):
     context={}
-    juego = Juego.objects.filter(tipo__nombre='fisico',consola__nombre='PS5')
+    juegos = Juego.objects.filter(tipo__nombre='fisico',consola__nombre='PS5')
     data = {        
-        'juego': juego
+        'juegos': juegos
     }
     return render(request, 'enexx/ps5.html',data)
     return render(request, 'enexx/ps5.html',context)
 
 def Switch(request):
     context={}
-    juego = Juego.objects.filter(tipo__nombre='fisico',consola__nombre='SWITCH')
+    juegos = Juego.objects.filter(tipo__nombre='fisico',consola__nombre='SWITCH')
     data = {
-        'juego': juego
+        'juegos': juegos
     }
     return render(request, 'enexx/Switch.html',data)
     return render(request, 'enexx/Switch.html',context)
 
 def xbox_fisicos(request):
     context={}
-    juego = Juego.objects.filter(tipo__nombre='fisico',consola__nombre='XBOX')
+    juegos = Juego.objects.filter(tipo__nombre='fisico',consola__nombre='XBOX')
     data = {
-        'juego': juego
+        'juegos': juegos
     }
     return render(request, 'enexx/xbox_fisicos.html',data)
     return render(request, 'enexx/xbox_fisicos.html',context)
 
 def ps5digital(request):
     context={}
-    juego = Juego.objects.filter(tipo__nombre='digital',consola__nombre='PS5')
+    juegos = Juego.objects.filter(tipo__nombre='digital',consola__nombre='PS5')
     data = {        
-        'juego': juego
+        'juegos': juegos
     }
     return render(request, 'enexx/ps5digital.html',data)
     return render(request, 'enexx/ps5digital.html',context)
 
 def Switch_digital(request):
     context={}
-    juego = Juego.objects.filter(tipo__nombre='digital',consola__nombre='SWITCH')
+    juegos = Juego.objects.filter(tipo__nombre='digital',consola__nombre='SWITCH')
     data = {
-        'juego': juego
+        'juegos': juegos
     }
     return render(request, 'enexx/Switch_digital.html',data)
     return render(request, 'enexx/Switch_digital.html',context)
 
 def xbox_digital(request):
     context={}
-    juego = Juego.objects.filter(tipo__nombre='digital',consola__nombre='XBOX')
+    juegos = Juego.objects.filter(tipo__nombre='digital',consola__nombre='XBOX')
     data = {
-        'juego': juego
+        'juegos': juegos
     }
     return render(request, 'enexx/xbox_digital.html',data)
     return render(request, 'enexx/xbox_digital.html',context)
 
 def ps5dlc(request):
     context={}
-    juego = Juego.objects.filter(tipo__nombre='dlc',consola__nombre='PS5')
+    juegos = Juego.objects.filter(tipo__nombre='dlc',consola__nombre='PS5')
     data = {        
-        'juego': juego
+        'juegos': juegos
     }
     return render(request, 'enexx/ps5digital.html',data)
     return render(request, 'enexx/ps5dlc.html',context)
 
 def Switch_dlc(request):
     context={}
-    juego = Juego.objects.filter(tipo__nombre='dlc',consola__nombre='SWITCH')
+    juegos = Juego.objects.filter(tipo__nombre='dlc',consola__nombre='SWITCH')
     data = {
-        'juego': juego
+        'juegos': juegos
     }
     return render(request, 'enexx/Switch_dlc.html',data)
     return render(request, 'enexx/Switch_dlc.html',context)
 
 def xbox_dlc(request):
     context={}
-    juego = Juego.objects.filter(tipo__nombre='dlc',consola__nombre='XBOX')
+    juegos = Juego.objects.filter(tipo__nombre='dlc',consola__nombre='XBOX')
     data = {
-        'juego': juego
+        'juegos': juegos
     }
     return render(request, 'enexx/xbox_dlc.html',data)
     return render(request, 'enexx/xbox_dlc.html',context)
