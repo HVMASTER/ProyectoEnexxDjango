@@ -2,11 +2,11 @@ from django.shortcuts import render, redirect
 from enexx.models import Juego, Tipo
 from .forms import CustomUserCreationForm
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required #decorador para que solo el staff pueda acceder a esta vista
 from django.contrib.auth import authenticate, login
 
 # Create your views here.
-@login_required
+@permission_required('staff') #decorador para que solo el staff pueda acceder a esta vista
 def menu(request):
     context={}
     return render(request, 'administrador/menu.html',context)
