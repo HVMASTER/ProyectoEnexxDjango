@@ -191,11 +191,6 @@ function EliminarJuego(id){
     confirmButtonText: 'Si, eliminarlo!'
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire(
-        'Eliminado!',
-        'El juego ha sido eliminado.',
-        'success'
-      )
       window.location.href = 'eliminarJuego/'+id;
     }
   })

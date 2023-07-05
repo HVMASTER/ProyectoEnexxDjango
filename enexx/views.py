@@ -4,7 +4,7 @@ from .forms import ContactoFrom, JuegoForm
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.http import Http404
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 # Create your views here.
 
 
@@ -113,12 +113,12 @@ def contacto(request):
         formulario = ContactoFrom(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            data['mensaje'] = "Contacto guardado"
+            messages.success(request, "Mensaje enviado correctamente")
         else:
             data['form'] = formulario
     return render(request, 'enexx/contacto.html', data)
 
-@login_required
+@permission_required
 def agregarJuego(request):
     data = {
         'form': JuegoForm()
@@ -127,12 +127,12 @@ def agregarJuego(request):
         formulario = JuegoForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            data['mensaje'] = "Juego guardado"
+            messages.success(request, "Juego guardado correctamente")
         else:
             data['form'] = formulario
     return render(request, 'enexx/productos/agregarJuego.html', data)
 
-@login_required
+@permission_required
 def listarJuego(request):
 
     juego = Juego.objects.all()
@@ -146,13 +146,13 @@ def listarJuego(request):
         raise Http404
 
     data={
-        'entity': juego,
+        'juegos': juego,
         'paginator': paginator
     }
 
     return render(request, 'enexx/productos/listarJuego.html', data)
     
-@login_required
+@permission_required
 def modificarJuego(request, id):
     
     juego = get_object_or_404(Juego, id=id)
@@ -172,6 +172,7 @@ def modificarJuego(request, id):
 
     return render(request, 'enexx/productos/modificarJuego.html', data)
 
+@permission_required
 def eliminarJuego(request, id):
     juego = get_object_or_404(Juego, id=id)
     juego.delete()
