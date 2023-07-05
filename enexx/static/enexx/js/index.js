@@ -19,7 +19,22 @@ const btnCart =document.querySelector('.container-cart-icon')
 
 
 
-  productsList.addEventListener('click', e => {
+window.onload = traerlocalstorage();
+window.onload = showHTML();
+
+function traerlocalstorage(){
+  const guardarCarrito = localStorage.getItem('allProducts');
+    if (guardarCarrito){
+      allProducts = JSON.parse(guardarCarrito);
+
+    }
+}
+function guardarElCarritoEnLocalstorage(){
+  localStorage.setItem('allProducts', JSON.stringify(allProducts));
+}
+document.addEventListener('DOMContentLoaded', function() {
+  if (productsList){
+    productsList.addEventListener('click', e => {
         if (e.target.classList.contains('btn-add-cart')) {
           const product = e.target.parentElement;
           const infoProduct = {
@@ -43,26 +58,40 @@ const btnCart =document.querySelector('.container-cart-icon')
           }
           
           showHTML();
+          
+          guardarElCarritoEnLocalstorage();
         }
       });
+  }
+});
 
 rowProduct.addEventListener('click',  e => {
+
         if(e.target.classList.contains('icon-close')){
+          
                 const product = e.target.parentElement
                 const title = product.querySelector('p').textContent
+                const itemIndex = allProducts.findIndex(item => item.title === title);
+                if (itemIndex !== -1) {                
+                    if (allProducts[itemIndex].quantity > 1) {
+                        allProducts[itemIndex].quantity--;
+                    } else {
+                      allProducts.splice(itemIndex, 1);
+                    }
 
-                allProducts = allProducts.filter(
-                        product => product.title !== title
-                        );
+                    
+                    localStorage.setItem('allProducts', JSON.stringify(allProducts)); // Guarda el estado del carrito en localStorage
+                    
+                }
                 
         }
-        console.log(allProducts)
+        
         showHTML()
 })
       
 
 // funcion para mostrar HTML
-const showHTML = () =>{
+function showHTML()  {
 
         if(!allProducts,length){
                 containerCartProducts.innerHTML=`
@@ -75,6 +104,8 @@ const showHTML = () =>{
 
         let total =0;
         let totalOfProducts =0;
+        
+
         
         allProducts.forEach(product =>{
                 const containerProduct = document.createElement('div')
