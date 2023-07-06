@@ -1,0 +1,132 @@
+
+/* FONTS GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* VARIABLES */
+
+:root {
+    --fuente: #ffc107;
+    --azul-opacidad: #261b06;
+    --bg-menu: #383838;
+    --bg-body: #C7E1FF;
+}
+
+/* GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--fuente);
+}
+
+/* LAYOUT */
+
+.menu-dashboard {
+    max-width: 100px;
+    height: auto;
+    background: var(--bg-menu);
+    padding: 20px;
+    transition: max-width .3s ease;
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-menu .toggle {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.top-menu .toggle i {
+    font-size: 35px;
+}
+
+/* user */
+
+.info-usuario{
+    width: 100%;
+    padding: 20px 0 20px 17px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+
+.info-usuario i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.info-usuario span {
+    opacity: 0;
+    transition: opacity .3s ease;
+    color: var(--fuente);
+}
+
+/* ENLACES MENU */
+
+.menu .enlace {
+    width: 100%;
+    padding: 20px 0 20px 17px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+
+.menu .enlace:hover {
+    background: var(--azul-opacidad);
+}
+
+.menu .enlace i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.menu .enlace a {
+    opacity: 0;
+    transition: opacity .3s ease;
+    color: var(--fuente);
+}
+
+.menu-dashboard.open {
+    max-width: 300px;
+}
+
+
+.menu-dashboard.open .info-usuario
+.menu-dashboard.open .menu .enlace {
+    width: auto;
+}
+
+.menu-dashboard.open .menu .enlace {
+    padding: 20px;
+}
+
+.menu-dashboard.open .menu .enlace a {
+    opacity: 1;
+}
+
+.menu-dashboard.open .info-usuario span {
+    opacity: 1;
+}
+
+
