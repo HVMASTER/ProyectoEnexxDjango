@@ -512,7 +512,7 @@
 
 .contenedorRegistro{
     display: inline-block;
-    width: 50rem;
+    width: auto;
     height: auto;
     margin-left: 5%;
     margin-right: 5%;
