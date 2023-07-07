@@ -8,19 +8,23 @@
         <div class="card-body">
           <h2>Listado de Juegos</h2>
           <hr>
-          <table class="table table-striped table-hover table-dark">
-            <tr>
-              <th>Nombre</th>
-              <th>Precio</th>
-              <th>Genero</th>
-              <th>Cantidad</th>
-              <th>Consola</th>
-              <th>Tipo</th>
-              <th>Opciones</th>
-              
-            </tr>
+          <table class="table table-responsive table-striped table-hover table-dark ">
+            <!-- <i class="d-none d-sm-none d-md-block"></i> -->
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Genero</th>
+                <th>Cantidad</th>
+                <th>Consola</th>
+                <th>Tipo</th>
+                <th>Opciones</th>
+                
+              </tr>
+            </thead>
     
-            {% for juego in juegos %}
+            <tbody>
+              {% for juego in juegos %}
             
               <tr>
                 <td>{{ juego.nombre | title }}</td>
@@ -40,6 +44,8 @@
               </tr>
     
             {% endfor %}
+            </tbody>
+            
             
           </table>
           <hr>
